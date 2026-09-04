@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #111;
+}
+
+/* Container ocupando a tela inteira */
+.cenario {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background-image: url('bg.jpg');
+  /* 'contain' mantém a proporção da imagem sem cortar a rua */
+  background-size: auto 100%; 
+  background-repeat: repeat-x;
+  /* Animação infinita e fluida do fundo */
+  animation: moverRua 8s linear infinite;
+}
+
+/* Animação em loop contínuo */
+@keyframes moverRua {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    /* Desloca a largura exata da imagem repetida para um loop imperceptível */
+    background-position: -2000px 0; 
+  }
+}
+
+/* Regras gerais para os veículos */
+.veiculo {
+  position: absolute;
+  height: auto;
+}
+
+/* Carro ajustado bem rente à parte inferior da tela */
+.carro {
+  width: 160px;
+  bottom: 0px; /* Alinhado ao limite inferior */
+  left: 20%;  /* Posição atrás da moto */
+}
+
+/* Moto ajustada mais para baixo, na faixa logo acima do carro */
+.moto {
+  width: 100px;
+  bottom: 18px; /* Ligeiramente acima do carro para dar perspectiva */
+  left: 55%;    /* Posição à frente do carro */
+}
